@@ -83,13 +83,9 @@ export const deleteBlog = async (req, res) => {
       .input("id", sql.VarChar, id)
       .query(`DELETE FROM blog WHERE blogID = @id`);
     res.status(200).json("Blog deleted successfully");
-    
   } catch (error) {
     res.status(500).json(error.message);
-    
   } finally {
     sql.close();
-
   }
 };
-

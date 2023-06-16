@@ -12,6 +12,7 @@ const {
   SQL_USER,
   SQL_PWD,
   SQL_DB,
+  JWT_SECRET,
 } = process.env;
 
 const sqlEncrypt = process.env.SQL_ENCRYPT === "true";
@@ -31,9 +32,10 @@ const config = {
     database: SQL_DB,
     options: {
       encrypt: sqlEncrypt,
-      enableArithAbort: true
+      enableArithAbort: true,
     },
   },
+  jwt_secret: JWT_SECRET,
 };
 
 export default config;
